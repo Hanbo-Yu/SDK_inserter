@@ -1,0 +1,27 @@
+目的：对安卓apk包插入dragonsdk
+运行前置：Python3,apktool,JDK1.8.0以上
+使用库： os, shut, xml.dom.minidom
+文件目录：
+(1) apk：插入sdk目标文件夹
+(2) dragonmobile: dragonsdk
+(3) script.py: 主脚本
+(4) sigature.keystore : 签名文件
+事件流：将需要插入sdk的对象apk放入当前目录apk包中，使用terminal运行python3 script.py,脚本运行完毕会在脚本目录生成插入sdk后的apk文件，文件名以_Signed结尾.
+
+
+
+测试用例：
+Asphalt8:失败，卡在logo界面
+Minecraft 成功
+Grand Theft Auto: San Andreas 失败，此包中还有另一个包
+Garena Free Fire 失败，闪退
+Terarria：失败，疑似服务器验证
+Call of Duty: Mobile 失败，闪退
+subwaysurf 失败，解包可以，无法重打包，可能是有dead code防止更改
+Shadow_Fight 失败，无法解包, 解包会丢失资源文件
+Gangstar Vegas: World of Crime 失败，解包可以，无法重打包，可能是有dead code防止更改
+Hill climb racing: 成功
+Drive Simulator: 成功
+PVZ2: 失败，闪退
+PUBG mobile:失败，卡在启动页
+Doodle Army 2 : Mini Militia:失败，加壳
